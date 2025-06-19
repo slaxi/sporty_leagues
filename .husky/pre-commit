@@ -1,0 +1,14 @@
+echo '🏗️👷💅 Checking the format with Prettier and running the Linter...'
+npx lint-staged || 
+(
+    echo '💥❌🐛🐞 Link staged check has failed. 💥❌🐛🐞
+          Please check your code and make required changes and then try to commit again.';
+    false;
+)
+npm test || (
+    echo '💥❌🐛🐞 Test suits has failed. 💥❌🐛🐞
+          Please check your code and make required changes and then try to commit again.';
+    false;
+)
+# If everything passes... Now we can commit
+echo '✅✅✅✅ ❤️‍🔥... Everything looks good, I am comitting this now.  ❤️‍🔥 ✅✅✅✅'
