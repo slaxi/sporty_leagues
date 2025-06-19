@@ -1,54 +1,65 @@
-# React + TypeScript + Vite
+# Project overview 🏟️⚽🏀🏈
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This project is a simple SPA app which display a list of sports leagues
 
-Currently, two official plugins are available:
+## Key functionalities
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- A friendly user interface that allows you to search and filter for different leagues, based on league name or sport
+- Ability to view a season badge image of league
 
-## Expanding the ESLint configuration
+## What's in the stack 📏📐
+- Framework [React](https://react.dev/learn)
+- Code formatting with [Prettier](https://prettier.io)
+- Linting with [ESLint](https://eslint.org)
+- Bundler [Vite](https://vitejs.dev/)
+- Styling and Templating [MaterialUI](https://mui.com/material-ui/getting-started/)
+- Icons [MaterialUiIcon](https://mui.com/material-ui/material-icons/)
+- Data fetching [ReactQuery](https://tanstack.com/query/latest/docs/framework/react/overview)
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+## `Running the API Locally`
+
+**1. Clone the repo**
+
+```bash
+#HTTPS
+git clone https://github.com/slaxi/sporty_leagues.git
+
+#SSH
+git clone git@github.com:slaxi/sporty_leagues.git
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+**2. Install dependencies**
+Assuming you are in the root directory of your repo.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
+```bash
+npm install
 ```
+
+**3. Start it**
+Assuming you are in the root directory.
+
+```bash
+npm run dev
+```
+
+# Tests
+Tests are run as a part of husky setup, but you can run them in isolation via:
+```bash
+npm run test
+```
+
+# Project General Structure Overview 📂
+
+| Resource                                      | Description                                                                    |
+| --------------------------------------------- | ------------------------------------------------------------------------------ |
+| **.gitignore**                                | Specifies intentionally untracked files that Git should ignore.                |                               |
+| **tsconfig.json, react-table.d.ts, env.d.ts** | TypeScript related settings.                                                   |
+| **.prettier and .prettierignore**             | Prettier related settings                                                      |
+| **.estlintrc.js and .estlintignore**          | Estlint related settings                                                       |
+| **package.json**                              | Project settings, dependencies, dev dependencies, command scripts, etc.        |
+| **vite.config.ts**                            | Vite config                                                                    |
+| **app**                                       | Folder were all the source code lives ( components.pages, routes, hooks, etc). |        |
+| **.husky**                                    | Husky hooks                                                                    |
+| **README**                                    | Project information from stack used, code guidelines, architecture, etc        |          
+|
