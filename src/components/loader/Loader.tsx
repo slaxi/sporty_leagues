@@ -8,9 +8,8 @@ const Loader = () => {
         display: 'flex',
         justifyContent: 'center',
         flexDirection: 'column',
-        alignItems: 'center',
-        height: '100vh', // Loader zauzima ceo ekran
-        backgroundColor: '#f5f5f5' // Svetlosiva pozadina
+        alignItems: 'center'
+        // height: '50vh', // Loader zauzima ceo ekran
       }}
     >
       <Typography
@@ -20,7 +19,7 @@ const Loader = () => {
           textAlign: 'center',
           fontWeight: 'bold',
           margin: '40px 0',
-          color: '#333', // Tamno siva boja za tekst
+          color: 'white', // Tamno siva boja za tekst
           fontFamily: 'Roboto, sans-serif' // Font koji se koristi u aplikaciji
         }}
       >
@@ -33,7 +32,8 @@ const Loader = () => {
         sx={{
           width: '100px', // Veličina lopte
           height: '100px',
-          animation: 'spin 1.5s linear infinite' // Animacija rotacije
+          animation: 'spin 1.5s linear infinite', // Animacija rotacije,
+          filter: 'brightness(0) invert(1)'
         }}
       />
       {/* CSS za animaciju */}

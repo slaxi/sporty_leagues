@@ -1,4 +1,5 @@
 import {
+  Box,
   Paper,
   Table,
   TableBody,
@@ -8,43 +9,51 @@ import {
   TableRow
 } from '@mui/material';
 import React from 'react';
+import { ILeagueTable } from './LeagueTable.types';
 
-const leagues = [
-  { league: 'Premier League', sport: 'Football', altLeague: 'Championship' },
-  { league: 'NBA', sport: 'Basketball', altLeague: 'EuroLeague' },
-  { league: 'ATP', sport: 'Tennis', altLeague: 'WTA' }
-];
-
-const LeagueTable = () => {
+const LeagueTable = ({ leaguesData }: { leaguesData: ILeagueTable[] }) => {
   return (
     <section>
-      <TableContainer
-        component={Paper}
+      <Box
         sx={{
-          backgroundColor: 'rgba(255, 255, 255, 0.9)',
-          width: { xs: '100%', md: '80%' },
-          margin: '0 auto'
+          minHeight: '400px', // Rezerviše prostor za tabelu ili loader
+          backgroundColor: 'rgba(0, 0, 0, 0.05)', // Svetlosiva pozadina za konzistentnost
+          borderRadius: '8px', // Zaobljene ivice
+          overflow: 'hidden', // Sprečava skakanje sadržaja
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center'
         }}
       >
-        <Table aria-label="League Table">
-          <TableHead>
-            <TableRow>
-              <TableCell sx={{ fontWeight: 'bold' }}>League</TableCell>
-              <TableCell sx={{ fontWeight: 'bold' }}>Sport</TableCell>
-              <TableCell sx={{ fontWeight: 'bold' }}>Alternative League</TableCell>
-            </TableRow>
-          </TableHead>
-          <TableBody>
-            {leagues.map((row, index) => (
-              <TableRow key={index}>
-                <TableCell>{row.league}</TableCell>
-                <TableCell>{row.sport}</TableCell>
-                <TableCell>{row.altLeague}</TableCell>
+        <TableContainer
+          component={Paper}
+          sx={{
+            backgroundColor: 'rgba(255, 255, 255, 0.9)',
+            width: { xs: '100%', md: '80%' },
+            margin: '0 auto',
+            minHeight: '400px'
+          }}
+        >
+          <Table aria-label="League Table">
+            <TableHead>
+              <TableRow>
+                <TableCell sx={{ fontWeight: 'bold' }}>League</TableCell>
+                <TableCell sx={{ fontWeight: 'bold' }}>Sport</TableCell>
+                <TableCell sx={{ fontWeight: 'bold' }}>Alternative League</TableCell>
               </TableRow>
-            ))}
-          </TableBody>
-        </Table>
-      </TableContainer>
+            </TableHead>
+            <TableBody>
+              {leaguesData.map((row, index) => (
+                <TableRow key={index}>
+                  <TableCell>{row.strLeague}</TableCell>
+                  <TableCell>{row.strSport}</TableCell>
+                  <TableCell>{row.strLeagueAlternate}</TableCell>
+                </TableRow>
+              ))}
+            </TableBody>
+          </Table>
+        </TableContainer>
+      </Box>
     </section>
   );
 };

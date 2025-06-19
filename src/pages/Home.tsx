@@ -16,7 +16,7 @@ import {
 import LeagueTable from '../components/league-table/LeagueTable';
 import Loader from '../components/loader/Loader';
 import Title from '../components/title/Title';
-import SearchField from '../components/search-field/SearchField';
+import SearchField from '../components/filters/Filters';
 import MainContent from '../components/main-content/MainContent';
 
 const sportsBackground = 'url(https://images.unsplash.com/photo-1517649763962-0c623066013b)'; // URL slike za pozadinu
@@ -35,7 +35,6 @@ const HomePage = () => {
         }}
       >
         <Title />
-
         <MainContent />
       </Box>
     </main>
