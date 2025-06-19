@@ -54,12 +54,11 @@ npm run test
 | Resource                                      | Description                                                                    |
 | --------------------------------------------- | ------------------------------------------------------------------------------ |
 | **.gitignore**                                | Specifies intentionally untracked files that Git should ignore.                |                               |
-| **tsconfig.json, react-table.d.ts, env.d.ts** | TypeScript related settings.                                                   |
+| **tsconfig.json, env.d.ts**                   | TypeScript related settings.                                                   |
 | **.prettier and .prettierignore**             | Prettier related settings                                                      |
 | **.estlintrc.js and .estlintignore**          | Estlint related settings                                                       |
 | **package.json**                              | Project settings, dependencies, dev dependencies, command scripts, etc.        |
 | **vite.config.ts**                            | Vite config                                                                    |
-| **app**                                       | Folder were all the source code lives ( components.pages, routes, hooks, etc). |        |
+| **app**                                       | Folder were all the source code lives ( components.pages, routes, hooks, etc). |
 | **.husky**                                    | Husky hooks                                                                    |
-| **README**                                    | Project information from stack used, code guidelines, architecture, etc        |          
-|
+| **README**                                    | Project information from stack used, code guidelines, architecture, etc        |

@@ -1,10 +1,10 @@
 import { render, screen } from '@testing-library/react';
-import App from '../App';
+import Home from '../pages/Home';
 import { describe, expect, it } from 'vitest';
 
-describe('App component', () => {
+describe('Home component', () => {
   it('should render the heading title', () => {
-    render(<App />);
+    render(<Home />);
     const heading = screen.getByRole('heading', { level: 1 });
 
     expect(heading).toBeInTheDocument();
