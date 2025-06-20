@@ -29,19 +29,18 @@ export default [
     }
   },
   {
-    // Konfiguracija za test fajlove
-    files: ['**/*.{test,spec}.{js,jsx,ts,tsx}'], // Test fajlovi
+    files: ['**/*.{test,spec}.{js,jsx,ts,tsx}'],
     languageOptions: {
       globals: {
         ...globals.browser,
-        ...globals.node // Dodajemo Node.js globalne promenljive
+        ...globals.node
       }
     },
     plugins: {
-      vitest: vitestPlugin // Aktiviramo Vitest plugin
+      vitest: vitestPlugin
     },
     rules: {
-      ...vitestPlugin.configs.recommended.rules // Preporučena pravila za Vitest
+      ...vitestPlugin.configs.recommended.rules
     }
   }
 ];
