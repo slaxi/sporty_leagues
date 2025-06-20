@@ -1,5 +1,5 @@
 import { useQuery } from '@tanstack/react-query';
-import { TSeasonBadgeQuery } from './useLeagureTableQuery.types';
+import { TSeasonBadgeQuery } from './useQueryDataTypes';
 
 const baseUrl = import.meta.env.VITE_SEASON_BADGES_API_URL;
 export const useSeasonBadgeQuery = (leagueId: string | null, options = {}): TSeasonBadgeQuery => {
@@ -8,12 +8,10 @@ export const useSeasonBadgeQuery = (leagueId: string | null, options = {}): TSea
     staleTime: 1000 * 60 * 5, // Data is fresh for 5 minutes
     queryFn: async () => {
       const response = await fetch(`${baseUrl}&id=${leagueId}`);
-      console.log(response);
       if (!response.ok) {
         throw new Error('Network response was not ok');
       }
       const badgeData = await response.json();
-      console.log('Season Badge Data:', badgeData, 'URL:', baseUrl);
       return badgeData;
     },
     enabled: !!leagueId,

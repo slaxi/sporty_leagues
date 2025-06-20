@@ -14,13 +14,16 @@ const DropdownFilter = ({
       sx={{
         backgroundColor: 'white',
         borderRadius: '4px',
-        width: { xs: '100%', md: '200px' }
-      }}
-      inputProps={{
-        'aria-label': 'Select Sport'
+        width: { xs: '100%', md: '200px' },
+        '& label': {
+          color: '#fff !important',
+          textShadow: '0 0 1px #213547, 0 0 4px rgb(2, 19, 33)',
+          fontWeight: 600
+        }
       }}
       onChange={handleSelectChange}
-      value={selectedSport}
+      value={selectedSport === 'Select Sport' ? '' : selectedSport}
+      placeholder={'Select Sport'}
     >
       {filteredSports.map((sport) => (
         <MenuItem value={sport} key={sport}>

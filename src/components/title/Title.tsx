@@ -4,7 +4,7 @@ import { h } from 'react-router/dist/development/register-DCE0tH5m';
 
 const Title = () => {
   return (
-    <header>
+    <section>
       <Typography
         variant="h2"
         component="h1"
@@ -17,7 +17,7 @@ const Title = () => {
       >
         Sports Betting Dashboard
       </Typography>
-    </header>
+    </section>
   );
 };
 

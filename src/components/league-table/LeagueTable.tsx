@@ -34,11 +34,13 @@ const LeagueTable = ({ leagues, onLeagueClick }: TLeagueTableProps) => {
           }}
         >
           <Table aria-label="League Table">
-            <TableHead>
+            <TableHead sx={{ backgroundColor: 'teal', color: 'white' }}>
               <TableRow>
-                <TableCell sx={{ fontWeight: 'bold' }}>League</TableCell>
-                <TableCell sx={{ fontWeight: 'bold' }}>Sport</TableCell>
-                <TableCell sx={{ fontWeight: 'bold' }}>Alternative League</TableCell>
+                <TableCell sx={{ fontWeight: 'bold', color: 'inherit' }}>League</TableCell>
+                <TableCell sx={{ fontWeight: 'bold', color: 'inherit' }}>Sport</TableCell>
+                <TableCell sx={{ fontWeight: 'bold', color: 'inherit' }}>
+                  Alternative League
+                </TableCell>
               </TableRow>
             </TableHead>
             <TableBody>

@@ -7,22 +7,23 @@ import { useCallback, useEffect, useMemo, useState } from 'react';
 import { TLeagueTable } from '../league-table/LeagueTable.types';
 import Filters from '../filters/Filters';
 import { SelectChangeEvent } from '@mui/material';
-import { TSeasonBadgeData } from '../../../hooks/useLeagureTableQuery.types';
+import { TSeasonBadgeData } from '../../../hooks/useQueryDataTypes';
 import { useNavigate } from 'react-router';
 
 const MainContent = () => {
   // Fetch league table data using the custom hook
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedSport, setselectedSport] = useState('Select Sport');
-  const [leagueId, setLeagueId] = useState<null | string>(null);
+  const [leagueId] = useState<null | string>(null);
 
   const { isLoading, error, data } = useLeagueTableQuery();
+
   const {
     isLoading: loading,
     error: errorData,
     data: badgesList
   } = useSeasonBadgeQuery(leagueId, {
-    enabled: !!leagueId // query se pokreće samo kad postoji leagueId
+    enabled: !!leagueId
   });
   const navigate = useNavigate();
   const filteredSports = useMemo(() => {
@@ -30,6 +31,7 @@ const MainContent = () => {
     const sportsNames = data.leagues.map((league: TLeagueTable) => league.strSport);
     return Array.from(new Set(sportsNames)).sort();
   }, [data]);
+
   const filteredLeagues = useCallback(
     (searchTerm: string, field: 'strLeague' | 'strSport') => {
       if (!data || !data.leagues) return [];
@@ -75,7 +77,6 @@ const MainContent = () => {
     const errorMessage = error?.message || errorData?.message || 'An error occurred';
     return <div>Error loading league table data: {errorMessage}</div>;
   }
-  console.log('Badges List:', badgesList);
   return (
     <>
       {/* Search and Filter Section */}

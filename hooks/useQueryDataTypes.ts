@@ -1,5 +1,5 @@
 import { TLeagueTable } from '../src/components/league-table/LeagueTable.types';
-type TLeagueTableData = {
+export type TLeagueTableData = {
   leagues: TLeagueTable[] | null;
 };
 
