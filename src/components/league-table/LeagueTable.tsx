@@ -8,10 +8,9 @@ import {
   TableHead,
   TableRow
 } from '@mui/material';
-import React from 'react';
-import { ILeagueTable } from './LeagueTable.types';
+import { TLeagueTableProps } from './LeagueTable.types';
 
-const LeagueTable = ({ leaguesData }: { leaguesData: ILeagueTable[] }) => {
+const LeagueTable = ({ leagues, onLeagueClick }: TLeagueTableProps) => {
   return (
     <section>
       <Box
@@ -43,9 +42,11 @@ const LeagueTable = ({ leaguesData }: { leaguesData: ILeagueTable[] }) => {
               </TableRow>
             </TableHead>
             <TableBody>
-              {leaguesData.map((row, index) => (
+              {leagues.map((row, index) => (
                 <TableRow key={index}>
-                  <TableCell>{row.strLeague}</TableCell>
+                  <TableCell onClick={() => onLeagueClick && onLeagueClick(row.idLeague)}>
+                    {row.strLeague}
+                  </TableCell>
                   <TableCell>{row.strSport}</TableCell>
                   <TableCell>{row.strLeagueAlternate}</TableCell>
                 </TableRow>

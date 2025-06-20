@@ -18,6 +18,7 @@ import Loader from '../components/loader/Loader';
 import Title from '../components/title/Title';
 import SearchField from '../components/filters/Filters';
 import MainContent from '../components/main-content/MainContent';
+import ErrorBoundary from '../components/ErrorBoundary';
 
 const sportsBackground = 'url(https://images.unsplash.com/photo-1517649763962-0c623066013b)'; // URL slike za pozadinu
 
@@ -35,7 +36,9 @@ const HomePage = () => {
         }}
       >
         <Title />
-        <MainContent />
+        <ErrorBoundary>
+          <MainContent />
+        </ErrorBoundary>
       </Box>
     </main>
   );
