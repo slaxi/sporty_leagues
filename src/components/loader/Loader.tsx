@@ -9,7 +9,6 @@ const Loader = () => {
         justifyContent: 'center',
         flexDirection: 'column',
         alignItems: 'center'
-        // height: '50vh', // Loader zauzima ceo ekran
       }}
     >
       <Typography
@@ -19,24 +18,24 @@ const Loader = () => {
           textAlign: 'center',
           fontWeight: 'bold',
           margin: '40px 0',
-          color: 'white', // Tamno siva boja za tekst
-          fontFamily: 'Roboto, sans-serif' // Font koji se koristi u aplikaciji
+          color: 'white',
+          fontFamily: 'Roboto, sans-serif'
         }}
       >
         Loading...
       </Typography>
       <Box
         component="img"
-        src="https://img2.annthegran.com/printart/xlarge/fsl_studio/pgfsl1365.webp" // URL slike fudbalske lopte
+        src="https://img2.annthegran.com/printart/xlarge/fsl_studio/pgfsl1365.webp"
         alt="Loading..."
         sx={{
-          width: '100px', // Veličina lopte
+          width: '100px',
           height: '100px',
-          animation: 'spin 1.5s linear infinite', // Animacija rotacije,
+          animation: 'spin 1.5s linear infinite',
           filter: 'brightness(0) invert(1)'
         }}
       />
-      {/* CSS za animaciju */}
+
       <style>
         {`
           @keyframes spin {

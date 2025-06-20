@@ -15,11 +15,10 @@ const LeagueTable = ({ leagues, onLeagueClick }: TLeagueTableProps) => {
     <section>
       <Box
         sx={{
-          minHeight: '400px', // Rezerviše prostor za tabelu ili loader
-          backgroundColor: 'rgba(0, 0, 0, 0.05)', // Svetlosiva pozadina za konzistentnost
-          borderRadius: '8px', // Zaobljene ivice
-          overflow: 'hidden', // Sprečava skakanje sadržaja
-          display: 'flex',
+          minHeight: '400px',
+          backgroundColor: 'rgba(0, 0, 0, 0.05)',
+          borderRadius: '8px',
+          overflow: 'hidden',
           justifyContent: 'center',
           alignItems: 'center'
         }}
